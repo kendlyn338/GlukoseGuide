@@ -12,6 +12,8 @@
         <p>Month: {{ patient.month }}</p>
         <p>Day: {{ patient.day }}</p>
         <p>Year: {{ patient.year }}</p>
+        
+
       </div>
       <div class="card-action">
         <a href="{% url 'patients_update' patient.id %}">Edit</a>
@@ -23,13 +25,16 @@
   <div class="col s6">
     <form action="{% url 'add_glucose' patient.id %}" method="post">
       {% csrf_token %} {{ glucose_form.as_p }}
-      <input type="submit" class="btn green" value="Add Glucose Reading" />
+      <input type="submit" class="btn green" value="Add Entry" />
+      
     </form>
     <table class="striped">
       <thead>
         <tr>
           <th>Date</th>
           <th>Meal</th>
+          <th>AccuCheck</th>
+          <th>Insulin</th>
         </tr>
       </thead>
       <tbody>
@@ -37,6 +42,8 @@
         <tr>
           <td>{{glucose.date}}</td>
           <td>{{glucose.get_meal_display}}</td>
+          <td>{{glucose.accucheck}}</td>
+          <td>{{glucose.insulin}}</td>
         </tr>
         {% endfor %}
       </tbody>

@@ -4,4 +4,4 @@ from .models import Glucose
 class GlucoseForm(ModelForm):
   class Meta:
     model = Glucose
-    fields = ['date', 'meal']
+    fields = ['date', 'meal', 'accucheck', 'insulin']
