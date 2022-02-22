@@ -12,28 +12,35 @@
         <p>Month: {{ patient.month }}</p>
         <p>Day: {{ patient.day }}</p>
         <p>Year: {{ patient.year }}</p>
-        
-
-      </div>
-      <div class="card-action">
-        <a href="{% url 'patients_update' patient.id %}">Edit</a>
-        <a href="{% url 'patients_delete' patient.id %}">Delete</a>
+        </div>
+        <div class="card-action">
+          <a href="{% url 'patients_update' patient.id %}">Edit</a>
+          <a href="{% url 'patients_delete' patient.id %}">Delete</a>
       </div>
     </div>
   </div>
-
   <div class="col s6">
     <form action="{% url 'add_glucose' patient.id %}" method="post">
       {% csrf_token %} {{ glucose_form.as_p }}
       <input type="submit" class="btn green" value="Add Entry" />
-      
     </form>
+    <br />
+    {% if patient.checked_today %}
+  <div class="card-panel teal-text center-align">
+     You have checked all of your blood sugars for today
+  </div>
+  {% else %}
+  <div class="card-panel red-text center-align">
+    {{patient.name}} It might be time to check your blood sugar 
+  </div>
+  {% endif %}
     <table class="striped">
       <thead>
         <tr>
           <th>Date</th>
           <th>Meal</th>
           <th>AccuCheck</th>
+          <th>Carbs for this Meal</th>
           <th>Insulin</th>
         </tr>
       </thead>
@@ -43,6 +50,7 @@
           <td>{{glucose.date}}</td>
           <td>{{glucose.get_meal_display}}</td>
           <td>{{glucose.accucheck}}</td>
+          <td>{{glucose.carbohydrates}}</td>
           <td>{{glucose.insulin}}</td>
         </tr>
         {% endfor %}
@@ -50,6 +58,7 @@
     </table>
   </div>
 </div>
+<hr />
 
 <script>
   var dateEl = document.getElementById('id_date');
@@ -63,6 +72,4 @@
   var selectEl = document.getElementById('id_meal');
   M.FormSelect.init(selectEl);
 </script>
-
-
-  {% endblock %}
+{% endblock %}
