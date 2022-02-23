@@ -1,4 +1,4 @@
-![GIF](https://media0.giphy.com/media/RLv9UwnfiNb9K/200.gif?cid=ecf05e47tn41aer97ovleq3sueas5qy11zd5kri3wrbnu8yk&rid=200.gif&ct=g)  
+!(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7Us2YM8dz0dq7Lxw0ZeLBrRuT6SAz--osdg&usqp=CAU)
 
 
 
@@ -66,7 +66,7 @@ Upon further development I would like to add:
  ![CSS3](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
  ![GITHUB](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
 
-# *Authors*
+
 
 Find me on
 ![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)
