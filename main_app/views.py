@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Patient, User, Glucose
-from .forms import GlucoseForm, ProfileForm
+from .forms import GlucoseForm
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -28,14 +28,6 @@ def signup(request):
   return render(request, 'registration/signup.html', context)
 
 
-
-def profile(request, user_id):
-    form = ProfileForm(request.POST)
-    if form.is_valid():
-        new_profile = form.save(commit=False)
-        new_profile.user_id = user_id
-        new_profile.save()
-    return redirect('patients_detail', user_id=user_id)
             
   
 def home(request):
@@ -85,7 +77,7 @@ class GlucoseUpdate(LoginRequiredMixin, UpdateView):
 
 class PatientCreate(LoginRequiredMixin, CreateView):
     model = Patient
-    fields = ('name', 'month', 'day', 'year')
+    fields = ('first name', 'last name', 'month', 'day', 'year', 'phone_number', 'email', 'physician', 'insulin_type', 'insulin_scale')
     
     def form_valid(self, form):
         form.instance.user = self.request.user

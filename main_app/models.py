@@ -15,22 +15,18 @@ MEALS = (
 )
 
 
-class Profile(models.Model):
-    user= models.OneToOneField(User, related_name='patients', on_delete=models.CASCADE)
-    physician = models.CharField(max_length=100)
-    insulin_type = models.CharField(max_length=50)
-    insulin_scale = models.CharField(max_length=50)
-    phone_number = models.CharField(max_length=50)
-    email = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.user
 
 class Patient(models.Model):
-    name = models.CharField(max_length=100)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
     month = models.CharField(max_length=20)
     day = models.IntegerField()
     year = models.IntegerField()
+    phone_number = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    physician = models.CharField(max_length=100)
+    insulin_type = models.CharField(max_length=50)
+    insulin_scale = models.CharField(max_length=50)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     
 
@@ -38,7 +34,7 @@ class Patient(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('patients_index', kwargs={'patient_id': self.id})
+        return reverse('patients_detail', kwargs={'patient_id': self.id})
 
     def checked_today(self):
         return self.glucose_set.filter(date=date.today()).count() >= len(MEALS)

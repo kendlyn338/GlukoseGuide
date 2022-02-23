@@ -32,9 +32,8 @@
             <li><a href="{% url 'about' %}">About</a></li>
             <li><a href="{% url 'reference' %}">Reference Page</a></li>
             {% if user.is_authenticated %}
-            <li><a href="{% url 'profile' user.id %}">User Profile</a></li>
-            <li><a href="{% url 'patients_create' %}">Add a Patient</a></li>
-            <li><a href="{% url 'patients_index' %}">All Patients</a></li>
+            {% comment %} <li><a href="{% url 'patients_create' %}">Add a Patient</a></li> {% endcomment %}
+            <li><a href="{% url 'patients_index' %}">View My Patient Info</a></li>
             <li>Welcome, {{user.username}}</li>
             <li><a href="{% url 'logout' %}">Log Out</a></li>
             {% else %}

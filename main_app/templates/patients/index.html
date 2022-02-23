@@ -8,10 +8,16 @@
 <div class="card">
         <a href="{% url 'patients_detail' patient.id %}">
     <div class="card-content">
-        <span class="card-title">{{ patient.name }}</span>
+        <span class="card-title">{{ patient.first_name }}</span>
+        <p>Last Name: {{ patient.last_name }}</p>
         <p>Month: {{ patient.month }}</p>
         <p>Day: {{ patient.day }}</p>
         <p>Year: {{ patient.year }}</p>
+        <p>Phone: {{ patient.phone_number }}</p>
+        <p>Email: {{ patient.email }}</p>
+        <p>Physician: {{ patient.physician }}</p>
+        <p>Insulin Type: {{ patient.insulin_type }}</p>
+        <p>Insulin Scale: {{ patient.insulin_scale }}</p>
         
             
         </div>
