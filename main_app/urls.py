@@ -3,9 +3,11 @@ from .import views
 
 
 
+
 urlpatterns = [
     path('', views.home, name='home'),
     path('about/', views.about, name='about'),
+    path('reference/', views.reference, name='reference'),
     path('patients/', views.patients_index, name='patients_index'),
     path('patients/<int:patient_id>/', views.patients_detail, name='patients_detail'),
     path('patients/create/', views.PatientCreate.as_view(), name='patients_create'),
@@ -13,7 +15,9 @@ urlpatterns = [
     path('patients/<int:pk>/delete/', views.PatientDelete.as_view(), name='patients_delete'),
     path('patients/<int:patient_id>/add_glucose/', views.add_glucose, name='add_glucose'),
     path('accounts/signup/', views.signup, name='signup'),
+    path('patients/<int:user_id>/profile/', views.profile, name='profile'),
+
+    path('glucose/<int:pk>/update/', views.GlucoseUpdate.as_view(), name='glucose_update'),
 
 
-    
 ]

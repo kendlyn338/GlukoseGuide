@@ -1,12 +1,11 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Patient
-from .forms import GlucoseForm
+from .models import Patient, User, Glucose
+from .forms import GlucoseForm, ProfileForm
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-
 
 
 
@@ -21,19 +20,32 @@ def signup(request):
     if form.is_valid():
       user = form.save()
       login(request, user)
-      return redirect('patients_index')
+      return redirect('patients_create')
     else:
       error_message = 'Invalid sign up - try again'
   form = UserCreationForm()
   context = {'form': form, 'error_message': error_message}
   return render(request, 'registration/signup.html', context)
 
+
+
+def profile(request, user_id):
+    form = ProfileForm(request.POST)
+    if form.is_valid():
+        new_profile = form.save(commit=False)
+        new_profile.user_id = user_id
+        new_profile.save()
+    return redirect('patients_detail', user_id=user_id)
+            
   
 def home(request):
     return render(request, 'home.html')
 
 def about(request):
     return render(request, 'about.html')
+
+def reference(request):
+    return render(request, 'reference.html')
 
 @login_required
 def patients_index(request):
@@ -57,6 +69,17 @@ def add_glucose(request, patient_id):
         new_glucose.patient_id = patient_id
         new_glucose.save()
     return redirect('patients_detail', patient_id=patient_id)
+
+
+# update Glucose Form 
+class GlucoseUpdate(LoginRequiredMixin, UpdateView):
+    model = Glucose
+    fields = ('date', 'meal', 'accucheck', 'carbohydrates', 'insulin')
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super().form_valid(form)
+
 
 
 

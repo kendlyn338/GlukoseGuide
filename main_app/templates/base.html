@@ -7,7 +7,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Glukose</title>
+    <title>GlukoseGuide</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
@@ -21,15 +21,21 @@
         <div class="nav-wrapper">
           <ul>
             <li>
-              <a href="/" class="left brand-logo">&nbsp;&nbsp;GlukoseGuide</a>
+              <a href="/" class="left brand-logo">&nbsp;&nbsp;
+                <img src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKgtcxZe1Vs8mpjFUv9-hyqPxQwvtfn889LA&usqp=CAU' width='100' height='50' class="d-inline-block align-top" />
+                Glukose Guide
+              </a>
               
             </li>
           </ul>
           <ul class="right">
             <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'reference' %}">Reference Page</a></li>
             {% if user.is_authenticated %}
+            <li><a href="{% url 'profile' user.id %}">User Profile</a></li>
             <li><a href="{% url 'patients_create' %}">Add a Patient</a></li>
             <li><a href="{% url 'patients_index' %}">All Patients</a></li>
+            <li>Welcome, {{user.username}}</li>
             <li><a href="{% url 'logout' %}">Log Out</a></li>
             {% else %}
             <li><a href="{% url 'signup' %}">Sign Up</a></li>

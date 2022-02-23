@@ -24,6 +24,9 @@
       {% csrf_token %} {{ glucose_form.as_p }}
       <input type="submit" class="btn green" value="Add Entry" />
     </form>
+  <div class="card-action">
+      <a href="{% url 'glucose_update' patient.id %}" class='btn green'>Edit</a> 
+  </div> 
     <br />
     {% if patient.checked_today %}
   <div class="card-panel teal-text center-align">
@@ -31,9 +34,10 @@
   </div>
   {% else %}
   <div class="card-panel red-text center-align">
-    {{patient.name}} It might be time to check your blood sugar 
+      It might be time to check your blood sugar 
   </div>
   {% endif %}
+  
     <table class="striped">
       <thead>
         <tr>
@@ -45,11 +49,24 @@
         </tr>
       </thead>
       <tbody>
+        {% comment %} change view of entries {% endcomment %}
           {% for glucose in patient.glucose_set.all %}
         <tr>
           <td>{{glucose.date}}</td>
           <td>{{glucose.get_meal_display}}</td>
-          <td>{{glucose.accucheck}}</td>
+          {% comment %} Add red or green for readings {% endcomment %}
+          <td>
+              {% if glucose.accucheck > 180 %}
+                <div class='High'>
+              {% elif glucose.accucheck < 70 %}
+                <div class='Low'> 
+              {% else %}
+                {{ glucose.accucheck }}
+                <div id='Normal'>
+              {% endif %}
+              </div>
+            </div>
+          </td>
           <td>{{glucose.carbohydrates}}</td>
           <td>{{glucose.insulin}}</td>
         </tr>
