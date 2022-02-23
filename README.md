@@ -39,12 +39,6 @@ https://warhandlerbackend.herokuapp.com
 
 ![Imgur](https://i.imgur.com/eJ6YGqe.jpg)
 
-![Imgur](https://i.imgur.com/QB3xVUr.png)
-
-![IMGUR](https://i.imgur.com/nnyRcKh.png?1)
-
-![Imgur](https://i.imgur.com/f6Nu0Li.png)
-
 
 
 ## *Ice Box*
@@ -65,6 +59,7 @@ Upon further development I would like to add:
  ![HEROKU](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
  ![CSS3](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
  ![GITHUB](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)
+ ![DJANGO](https://img.shields.io/badge/django%20versions-202.1-blue)
 
 
 
