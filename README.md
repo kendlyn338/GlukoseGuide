@@ -70,4 +70,4 @@ Upon further development I would like to add:
 
 Find me on
 ![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)
-Kendlyn Marriott | Project Roles: Backend Developer & PitchDeck | www.linkedin.com/in/kendlyn-marriott
+Kendlyn Marriott | www.linkedin.com/in/kendlyn-marriott
