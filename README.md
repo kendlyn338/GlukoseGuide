@@ -1,4 +1,4 @@
-!(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7Us2YM8dz0dq7Lxw0ZeLBrRuT6SAz--osdg&usqp=CAU)
+[Imgur](https://i.imgur.com/MNiVe9D.png?1)
 
 
 
@@ -25,7 +25,7 @@ https://trello.com/b/l1tINlIS/glukoseguide
 
 To deploy this project run
 
-https://warhandlerbackend.herokuapp.com
+https://glukoseguide.herokuapp.com
 
 
 
