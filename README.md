@@ -47,6 +47,7 @@ https://glukoseguide.herokuapp.com
 Upon further development I would like to add:
 - Implement a chart for patient to easily view glucose trends
 - Ability to email/text both patient and physician
+- Ability to send SMS reminders for patient to check blood glucose levels
 
 
 
