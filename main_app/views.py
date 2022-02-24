@@ -77,7 +77,7 @@ class GlucoseUpdate(LoginRequiredMixin, UpdateView):
 
 class PatientCreate(LoginRequiredMixin, CreateView):
     model = Patient
-    fields = ('name', 'last name', 'month', 'day', 'year', 'phone_number', 'email', 'physician', 'insulin_type', 'insulin_scale')
+    fields = ('name', 'month', 'day', 'year', 'phone_number', 'email', 'physician', 'insulin_type', 'insulin_scale')
     
     def form_valid(self, form):
         form.instance.user = self.request.user
