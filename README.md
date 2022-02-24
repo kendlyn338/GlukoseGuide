@@ -38,6 +38,7 @@ https://glukoseguide.herokuapp.com
 
 
 ![Imgur](https://i.imgur.com/9naodZI.png)
+![Imgur](https://i.imgur.com/3iSPfD8.png)
 
 
 
