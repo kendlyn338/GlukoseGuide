@@ -29,7 +29,7 @@ https://trello.com/b/l1tINlIS/glukoseguide
 
 To deploy this project run
 
-https://glukoseguide.herokuapp.com
+https://glukoseguide.herokuapp.com/
 
 
 
