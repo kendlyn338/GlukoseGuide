@@ -32,7 +32,7 @@
             <li><a href="{% url 'about' %}">Home</a></li>
             <li><a href="{% url 'reference' %}">Reference Page</a></li>
             {% if user.is_authenticated %}
-            {% comment %} <li><a href="{% url 'patients_create' %}">Add a Patient</a></li> {% endcomment %}
+            
             <li><a href="{% url 'patients_index' %}">View My Patient Info</a></li>
             <li>Welcome, {{user.username}}</li>
             <li><a href="{% url 'logout' %}">Log Out</a></li>

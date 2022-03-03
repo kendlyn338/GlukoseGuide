@@ -64,13 +64,13 @@ def add_glucose(request, patient_id):
 
 
 # update Glucose Form 
-class GlucoseUpdate(LoginRequiredMixin, UpdateView):
-    model = Glucose
-    fields = ('date', 'meal', 'accucheck', 'carbohydrates', 'insulin')
+# class GlucoseUpdate(LoginRequiredMixin, UpdateView):
+#     model = Glucose
+#     fields = ('date', 'meal', 'accucheck', 'carbohydrates', 'insulin')
 
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super().form_valid(form)
+#     def form_valid(self, form):
+#         form.instance.user = self.request.user
+#         return super().form_valid(form)
 
 
 

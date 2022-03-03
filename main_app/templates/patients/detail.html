@@ -35,9 +35,9 @@
       {% csrf_token %} {{ glucose_form.as_p }}
       <input type="submit" class="btn green" value="Add Entry" />
     </form>
-  <div class="card-action">
+  {% comment %} <div class="card-action">
       <a href="{% url 'glucose_update' patient.id %}" class='btn red'>Edit</a> 
-  </div> 
+  </div>  {% endcomment %}
     <br />
     {% if patient.checked_today %}
   <div class="card-panel teal-text center-align">
