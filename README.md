@@ -5,7 +5,11 @@
 
 # *GlukoseGuide*
 
-## There are so many people facing and even struggling with diabetes control.  This is a simple app to help a patient track their glucose and insulin data in one place. 
+## There are so many people facing and even struggling with diabetes control.  This is a simple app to help a patient track their glucose and insulin data in one place.
+
+## It’s important to keep your blood sugar levels in your target range as much as possible to help prevent or delay long-term, serious health problems, such as heart disease, vision loss, and kidney disease. Staying in your target range can also help improve your energy and mood. Find answers below to common questions about blood sugar for people with diabetes.
+
+
 
 
 
