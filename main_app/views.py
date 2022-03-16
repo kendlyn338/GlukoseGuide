@@ -39,12 +39,12 @@ def about(request):
 def reference(request):
     return render(request, 'reference.html')
 
-@login_required
+
 def patients_index(request):
     patients = Patient.objects.filter(user=request.user)
     return render(request, 'patients/index.html', { 'patients' : patients })
 
-@login_required
+
 def patients_detail(request, patient_id):
     patient = Patient.objects.get(id=patient_id)
     glucose_form = GlucoseForm()
@@ -53,7 +53,7 @@ def patients_detail(request, patient_id):
     'glucose_form' : glucose_form,
     })
 
-@login_required
+
 def add_glucose(request, patient_id):
     form = GlucoseForm(request.POST)
     if form.is_valid():
